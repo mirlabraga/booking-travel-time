@@ -1,0 +1,14 @@
+{
+  "name": "booking-travel-time",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest"
+  },
+  "author": "Mirla Braga <mirla.braga@thoughtworks.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "jest": "^29.7.0"
+  }
+}
