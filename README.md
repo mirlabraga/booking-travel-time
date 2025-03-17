@@ -9,7 +9,7 @@
 ## Installation
 
 ```bash
-$ git clone git@gitlab.com:mirlabraga/geo-search-api.git
+$ git clone git@gitlab.com:mirlabraga/booking-travel-time.git
 $ cd booking-travel-time
 $ npm install
 ```
