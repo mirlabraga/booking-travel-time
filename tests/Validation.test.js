@@ -1,5 +1,5 @@
-const sum = require('../src/Validation');
+const IsValidateSelectedYear = require('../src/Validation');
 
-test('adds 1 + 2 to equal 3', () => {
-  expect(sum(1, 2)).toBe(true);
+test('validate that selected year is in the not restrict period', () => {
+  expect(IsValidateSelectedYear(2015)).toBe(true);
 });
