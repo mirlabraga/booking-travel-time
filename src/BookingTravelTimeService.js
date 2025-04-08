@@ -2,14 +2,28 @@ class TicketTravelTime {
     returnTime = new Date();
 }
 
-function bookTravelTime(year) {
+function bookTravelTime(date) {
+    
     const ticketTravelTime = new TicketTravelTime();
 
-    if(IsValidateSelectedYear(2015)) {
-        ticketTravelTime = {
+    if (date) {
+        throw new TravelTimeServiceExpection("[ERROR]: A error happend when book tavel time was executed");
+    }
+
+    const year = date.year;
+    const day = date.day;
+    const hour = date.hour;
+    const time = date.time;
+
+    if(IsValidateSelectedYear(year) 
+        && IsValidateSelectedDay(day) 
+        && IsValidateSelectedHour(hour)
+        && IsValidateSelectedTime(time)) { 
+        ticketTravelTime = {  
+
         }
     }
     return ticketWithReturn;
 }
 
-module.exports = bookTravelTime;
+export default bookTravelTime;

@@ -1,0 +1,5 @@
+class TravelTimeServiceExpection {
+    message; 
+    constructor(){
+    }
+}
