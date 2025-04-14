@@ -1,5 +1,6 @@
 class TicketTravelTime {
     returnTime = new Date();
+
 }
 
 function bookTravelTime(date) {
