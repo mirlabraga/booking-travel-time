@@ -4,7 +4,7 @@
 const START_YEAR = 1990;
 const END_YEAR = 2021;
 
-function IsValidate(date, person) {
+function IsValidate(date: string | undefined, person: string | undefined) {
   IsValidateSelectedYear(date);
   IsValidateSelectedDate(date);
   IsValidateSelectedHour(date);
