@@ -6,8 +6,8 @@ export class ValitionBookingTravelTimeService {
 
     this.IsValidateSelectedYear(date.year);
     this.IsValidateSelectedDay(date.day);
-    this.IsValidateSelectedHour(date.hour, {});
-    this.IsValidateSelectedTime(date.time, {});
+    this.IsValidateSelectedHour(date.hour, {query: {}});
+    this.IsValidateSelectedTime(date.time, {query: {}});
     this.IsValidateDNAPerson(traveler);
   }
   
@@ -20,7 +20,7 @@ export class ValitionBookingTravelTimeService {
     //getValidDay()
   }
   
-  IsValidateSelectedHour(hour: number, { }) {
+  IsValidateSelectedHour(hour: number, query: any) {
     // return getInvalidHoursForYearDay()
   }
   
