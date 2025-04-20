@@ -1,0 +1,44 @@
+    // IsNumber(time: number, query: any) {
+    //     // Assuming time is in minutes, we check if it's between 0 and 59
+    //     // This is a common range for minutes in a time format (0:00 to 23:59)
+    //     // If time is in seconds, you might want to check if it's between 0 and 59 as well
+    //     // If time is in milliseconds, you might want to check if it's between 0 and 59 * 1000
+    //     // If time is in hours, you might want to check if it's between 0 and 23
+    //     return time >= 0 && time <= 59;
+    // }
+
+    // public getBookingTravelTime(): number {
+    //     // Simulate a travel time calculation
+    //     return Math.floor(Math.random() * 100);
+    // }
+
+     // If time is in seconds, you might want to check if it's between 0 and 59 as well
+    // If time is in milliseconds, you might want to check if it's between 0 and 59 * 1000
+    // If time is in hours, you might want to check if it's between 0 and 23
+    // If time is in days, you might want to check if it's between 0 and 31
+    // If time is in weeks, you might want to check if it's between 0 and 52
+    // If time is in months, you might want to check if it's between 0 and 12
+    // If time is in years, you might want to check if it's between 0 and 100
+    // If time is in decades, you might want to check if it's between 0 and 10
+    // If time is in centuries, you might want to check if it's between 0 and 1
+    // If time is in millennia, you might want to check if it's between 0 and 0.1
+    // If time is in eons, you might want to check if it's between 0 and 0.001
+    // If time is in aeons, you might want to check if it's between 0 and 0.0001
+    // If time is in epochs, you might want to check if it's between 0 and 0.00001
+    // If time is in eras, you might want to check if it's between 0 and 0.000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.0000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.00000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.0000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.00000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.0000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.00000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.000000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.0000000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.00000000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.000000000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.0000000000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.00000000000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.000000000000000000001
+    // If time is in epochs, you might want to check if it's between 0 and 0.0000000000000000000001 
