@@ -20,8 +20,11 @@ class BookingTravelTimeService {
         //     throw new TravelTimeServiceExpection("[ERROR]: This TIME IS NOT ALLOW to travel.");
         // }
     
-        return new TicketTravelTime();
+        // return new TicketTravelTime();
+        return null;
     }
+
+    getQRCode(date: any, travelers: any) {}
 }
 
 export default BookingTravelTimeService;
