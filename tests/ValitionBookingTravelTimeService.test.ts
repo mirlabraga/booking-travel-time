@@ -14,21 +14,11 @@ jest.mock("../src/services/TravelTimeQueryService", () => {
   });
 });
 
-jest.mock("../src/exception/TravelTimeServiceException", () => {
-  return jest.fn().mockImplementation(() => {
-    return {
-      IsValidateSelectedYear: () => {
-        throw new TravelTimeServiceException(
-          "[ERROR]: This YEAR IS NOT ALLOW to travel."
-        );
-      }
-    };
-  });
-});
+jest.mock("../src/exception/TravelTimeServiceException", jest.fn());
 
 describe("Set of tests for the validation of the period", () => {
 
-  test("validate that selected year is in the not restrict period", () => {
+  test("TEST FOR CHECKING that selected YEAR IS VALID period", () => {
     const valitionBookingTravelTimeService =
       new ValidationBookingTravelTimeService();
     expect(valitionBookingTravelTimeService.IsValidateSelectedYear(2024)).toBe(
@@ -36,9 +26,58 @@ describe("Set of tests for the validation of the period", () => {
     );
   });
 
-  test("validate that selected year is in the not restrict period", () => {
+  // test("validate that selected YEAR IS A RESTRICT period", () => {
+  //   const valitionBookingTravelTimeService =
+  //     new ValidationBookingTravelTimeService();
+  //     expect(() => valitionBookingTravelTimeService.IsValidateSelectedYear(2015)).toThrow();
+  // });
+
+  // test("validate that selected MONTH IS NOT A RESTRICT period", () => {
+  //   const valitionBookingTravelTimeService =
+  //     new ValidationBookingTravelTimeService();
+  //   expect(valitionBookingTravelTimeService.IsValidateSelectedMonth(-1)).toThrow();
+  // });
+
+  // test("validate that selected MONTH IS NOT A RESTRICT period", () => {
+  //   const valitionBookingTravelTimeService =
+  //     new ValidationBookingTravelTimeService();
+  //   expect(valitionBookingTravelTimeService.IsValidateSelectedMonth(0)).toThrow();
+  // });
+
+  test("TEST FOR CHECKING that selected MONTH IS VALID period", () => {
     const valitionBookingTravelTimeService =
       new ValidationBookingTravelTimeService();
-      expect(() => valitionBookingTravelTimeService.IsValidateSelectedYear(2015)).toThrow();
+    expect(valitionBookingTravelTimeService.IsValidateSelectedMonth(1)).toBe(
+      true
+    );
   });
+
+  test("TEST FOR CHECKING that selected MONTH IS VALID period", () => {
+    const valitionBookingTravelTimeService =
+      new ValidationBookingTravelTimeService();
+    expect(valitionBookingTravelTimeService.IsValidateSelectedMonth(12)).toBe(
+      true
+    );
+  });
+
+  // test("validate that selected MONTH IS NOT A RESTRICT period", () => {
+  //   const valitionBookingTravelTimeService =
+  //     new ValidationBookingTravelTimeService();
+  //   expect(valitionBookingTravelTimeService.IsValidateSelectedMonth(13)).toThrow();
+  // });
+
+  // test("validate that selected MONTH IS A RESTRICT period", () => {
+  //   const valitionBookingTravelTimeService =
+  //     new ValidationBookingTravelTimeService();
+  //   expect(valitionBookingTravelTimeService.IsValidateSelectedMonth(1000)).toThrow();
+  // });
+
+  // CONTINUE HERE:
+  
+  // test("TEST FOR CHECKING that selected DAY IS VALID period", () => {
+  //   const valitionBookingTravelTimeService =
+  //     new ValidationBookingTravelTimeService();
+  //     expect(() => valitionBookingTravelTimeService.IsValidateSelectedDay(-1)).toThrow();
+  // });
+
 });

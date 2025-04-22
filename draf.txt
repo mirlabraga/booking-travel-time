@@ -129,3 +129,12 @@
     // Doenças oftalmológicas e otorrinolaringológicas
     // Doenças ginecológicas e obstétricas
     // Doenças pediátricas e geriátricas
+
+      beforeEach(() => {
+    jest.clearAllMocks();
+  });
+
+  test('validate that selected year is in the not restrict period', () => {
+    const valitionBookingTravelTimeService = new ValidationBookingTravelTimeService(new TravelTimeQueryService());
+    expect(valitionBookingTravelTimeService.IsValidateSelectedYear(2024)).toBe(true);
+  });
