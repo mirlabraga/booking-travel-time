@@ -1,14 +1,16 @@
 import Traveler from "../model/Traveler";
 import TravelTimeServiceExpection from "../exception/TravelTimeServiceException";
+import { TravelTimeQueryService } from "./TravelTimeQueryService";
 
 const YEAR_FOR_TRAVEL = process.env.START_YEAR || 2024;
 
 export class ValidationBookingTravelTimeService {
-  private travelTimeQueryService: TravelTimeQueryService;
+  // private travelTimeQueryService: TravelTimeQueryService;
 
-  constructor(travelTimeQueryService: TravelTimeQueryService) {
-    this.travelTimeQueryService = travelTimeQueryService;
-  }
+  // constructor(travelTimeQueryService: TravelTimeQueryService) {
+  //   this.travelTimeQueryService = travelTimeQueryService;
+  // }
+  constructor() {}
 
   valid(
     date: { year: any; month: any; day: any; hour: any; time: any },
@@ -31,15 +33,15 @@ export class ValidationBookingTravelTimeService {
 
       this.IsValidateSelectedYear(date.year);
       this.IsValidateSelectedMonth(date.month);
-      this.IsValidateSelectedDay(date.day, {
-        query: {
-          parameter: {
-            year: date.year,
-            day: date.day,
-            hour: date.hour,
-          },
-        },
-      });
+      // this.IsValidateSelectedDay(date.day, {
+      //   query: {
+      //     parameter: {
+      //       year: date.year,
+      //       day: date.day,
+      //       hour: date.hour,
+      //     },
+      //   },
+      // });
       this.IsValidateSelectedHour(date.hour, {
         query: {
           parameter: {
@@ -86,20 +88,20 @@ export class ValidationBookingTravelTimeService {
     );
   }
 
-  async IsValidateSelectedDay(day: number, query: any) {
-    const isDayOnTheMonth = day >= 1 && day <= 31;
-    const isValidHourOnYearAndMonth =
-      await this.travelTimeQueryService.getValidHourOnYearAndMonth(
-        query.parameter.year,
-        query.query.parameter.day
-      );
-    if (isDayOnTheMonth && isValidHourOnYearAndMonth) {
-      return true;
-    }
-    throw new TravelTimeServiceExpection(
-      "[ERROR]: This DAY IS NOT ALLOW to travel."
-    );
-  }
+  // async IsValidateSelectedDay(day: number, query: any) {
+  //   const isDayOnTheMonth = day >= 1 && day <= 31;
+  //   const isValidHourOnYearAndMonth =
+  //     await this.travelTimeQueryService.getValidHourOnYearAndMonth(
+  //       query.parameter.year,
+  //       query.query.parameter.day
+  //     );
+  //   if (isDayOnTheMonth && isValidHourOnYearAndMonth) {
+  //     return true;
+  //   }
+  //   throw new TravelTimeServiceExpection(
+  //     "[ERROR]: This DAY IS NOT ALLOW to travel."
+  //   );
+  // }
 
   IsValidateSelectedHour(hour: number, query: any) {
     const isRangeHour = hour >= 0 && hour <= 23;
