@@ -1,7 +1,7 @@
-class TravelTimeQueryService {
+export class TravelTimeQueryService {
     private static instance: TravelTimeQueryService;
     
-    private constructor() {}
+    public constructor() {}
     
     public static getInstance(): TravelTimeQueryService {
         if (!TravelTimeQueryService.instance) {

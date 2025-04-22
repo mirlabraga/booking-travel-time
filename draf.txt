@@ -78,3 +78,54 @@
         // return new TicketTravelTime();
         return null;
     }
+
+
+    // test('validate exception that selected year is in the not restrict period', () => {
+//   const valitionBookingTravelTimeService = new ValidationBookingTravelTimeService();
+//   valitionBookingTravelTimeService.IsValidateSelectedYear(2015);
+//   // expect(valitionBookingTravelTimeService.IsValidateSelectedYear(2015)).toBe(true);
+//   // expect(() => fetchData()).toThrow('Mock TravelTimeServiceExpection Error');
+// });
+
+  // Vacina
+    // Fisico and mental
+    // Doenças
+    // Doenças contagiosas
+    // Doenças crônicas
+    // Doenças genéticas
+    // Doenças autoimunes
+    // Doenças degenerativas
+    // Doenças infecciosas
+    // Doenças parasitárias
+    // Doenças alérgicas
+    // Doenças respiratórias
+    // Doenças cardiovasculares
+    // Doenças neurológicas
+    // Doenças psiquiátricas
+    // Doenças endócrinas
+    // Doenças hematológicas
+    // Doenças renais
+    // Doenças hepáticas
+    // Doenças gastrointestinais
+    // Doenças dermatológicas
+    // Doenças oftalmológicas
+    // Doenças otorrinolaringológicas
+    // Doenças urológicas
+    // Doenças ginecológicas
+    // Doenças obstétricas
+    // Doenças pediátricas
+    // Doenças geriátricas
+    // Doenças oncológicas
+    // Doenças infecciosas e parasitárias
+    // Doenças autoimunes e inflamatórias
+    // Doenças degenerativas e metabólicas
+    // Doenças cardiovasculares e respiratórias
+    // Doenças neurológicas e psiquiátricas
+    // Doenças endócrinas e nutricionais
+    // Doenças hematológicas e oncológicas
+    // Doenças renais e urológicas
+    // Doenças hepáticas e gastrointestinais
+    // Doenças dermatológicas e alérgicas
+    // Doenças oftalmológicas e otorrinolaringológicas
+    // Doenças ginecológicas e obstétricas
+    // Doenças pediátricas e geriátricas
