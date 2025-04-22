@@ -3,14 +3,35 @@ import Utils from "../src/Utils";
 describe("Set of tests for the validation of the period", () => {
   test("TEST FOR VALID if the MONTH has 31 days", () => {
     const utils = new Utils();
-    expect(utils.IsAMonthOfThirtyOneDays(31, 1)).toBe(true);
+    expect(utils.IsAMonthOfThirtyOneDays(31, 1)).toBe(true); 
     expect(utils.IsAMonthOfThirtyOneDays(31, 3)).toBe(true);
     expect(utils.IsAMonthOfThirtyOneDays(31, 5)).toBe(true);
     expect(utils.IsAMonthOfThirtyOneDays(31, 7)).toBe(true);
     expect(utils.IsAMonthOfThirtyOneDays(31, 8)).toBe(true);
     expect(utils.IsAMonthOfThirtyOneDays(31, 10)).toBe(true);
     expect(utils.IsAMonthOfThirtyOneDays(31, 12)).toBe(true);
-  });
+  });    
+
+  test("TEST if a DAY is INVALID for month with 31 days", () => {
+    const utils = new Utils();
+    expect(utils.IsAMonthOfThirtyOneDays(0, 1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyOneDays(-1, 1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyOneDays(32, 1)).toBe(false);
+  })
+
+  test("TEST if a DAY / MONTH are INVALID for month with 31 days", () => {
+    const utils = new Utils();
+    expect(utils.IsAMonthOfThirtyOneDays(0, -1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyOneDays(-1, 0)).toBe(false);
+    expect(utils.IsAMonthOfThirtyOneDays(32, 13)).toBe(false);
+  })
+
+  test("TEST if a DAY is VALID and the MONTH is INVALID for month with 31 days", () => {
+    const utils = new Utils();
+    expect(utils.IsAMonthOfThirtyOneDays(1, 0)).toBe(false);
+    expect(utils.IsAMonthOfThirtyOneDays(15, -1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyOneDays(31, 13)).toBe(false);
+  })
 
   test("TEST FOR VALID if the MONTH has NOT with 31 days", () => {
     const utils = new Utils();
@@ -48,4 +69,26 @@ describe("Set of tests for the validation of the period", () => {
     expect(utils.IsAMonthOfThirtyDays(31, 9)).toBe(false);
     expect(utils.IsAMonthOfThirtyDays(31, 11)).toBe(false);
   });
+
+  test("TEST if a DAY is INVALID for month with 31 days", () => {
+    const utils = new Utils();
+    expect(utils.IsAMonthOfThirtyDays(0, 1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyDays(-1, 1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyDays(32, 1)).toBe(false);
+  })
+
+  test("TEST if a DAY / MONTH are INVALID for month with 31 days", () => {
+    const utils = new Utils();
+    expect(utils.IsAMonthOfThirtyDays(0, -1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyDays(-1, 0)).toBe(false);
+    expect(utils.IsAMonthOfThirtyDays(32, 13)).toBe(false);
+  })
+
+  test("TEST if a DAY is VALID and the MONTH is INVALID for month with 31 days", () => {
+    const utils = new Utils();
+    expect(utils.IsAMonthOfThirtyDays(1, 0)).toBe(false);
+    expect(utils.IsAMonthOfThirtyDays(15, -1)).toBe(false);
+    expect(utils.IsAMonthOfThirtyDays(31, 13)).toBe(false);
+  })
+
 });
