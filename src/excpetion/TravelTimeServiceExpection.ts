@@ -1,5 +1,5 @@
-class TravelTimeServiceExpection {
-    message: string | undefined; 
+class TravelTimeServiceExpection extends Error {
     constructor(message: string | undefined) {
+        super();
     }
 }

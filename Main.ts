@@ -1,19 +1,20 @@
 import BookingTravelTimeService from "./src/services/BookingTravelTimeService";
+import { ValitionBookingTravelTimeService } from "./src/services/ValidationBookingTravelTimeService";
 
 class Main {
-  private bookTravelTime: any;
+
   private bookingTravelTimeService: BookingTravelTimeService | undefined;
-  constructor(bookTravelTime: any, bookingTravelTimeService: BookingTravelTimeService) {
-    this.bookTravelTime = bookTravelTime;
+
+  constructor(bookingTravelTimeService: BookingTravelTimeService) {
     this.bookingTravelTimeService = bookingTravelTimeService;
   }
 
   travelInTime(date: string, travelers: any[]) {
-    const travelTime = this.bookTravelTime.bookTravelTime(date, travelers);
+    const travelTime = this.bookingTravelTimeService?.bookTravelTime(date, travelers);
     return travelTime;
   }
 
-  getTraveler() {
+  getTravelers() {
     const boardingPass: any = {
       "11 April 2000 12:30:59 GMT": {
         travelTime: "2 hours",
@@ -42,8 +43,10 @@ class Main {
   }
 }
 
-// function main() {
-//   console.log(travelInTime("11 April 2000 12:30:59 GMT", getTraveler()));
-// }
+const valitionBookingTravelTimeService: ValitionBookingTravelTimeService = null
+const bookingTravelTimeService: BookingTravelTimeService  = new BookingTravelTimeService();
 
-// main();
+
+const main = new Main(new BookingTravelTimeService);
+console.log(main.travelInTime("21 April 2025 10:30:59 GMT", main.getTravelers()));
+

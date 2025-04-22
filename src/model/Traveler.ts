@@ -1,6 +1,3 @@
-// src/model/Traveler.ts is a TypeScript file that defines a Traveler class.
-// The Traveler class contains properties related to a traveler's personal information.
-// The properties include id, name, email, phone, address, city, state, zip, country and so on.
 class Traveler {
   private id: string;
   private name: string;

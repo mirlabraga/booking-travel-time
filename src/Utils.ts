@@ -10,3 +10,5 @@ class Utils {
         return isValidNumber && (partDecimal == 0);
     }
 }
+
+export default Utils

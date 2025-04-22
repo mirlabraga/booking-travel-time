@@ -1,8 +1,8 @@
 class DNATraveler {
-    private dna: string;
+
     private position: number;
     
-    constructor(dna: string) {
+    constructor(private dna: string) {
         this.dna = dna;
         this.position = 0;
     }

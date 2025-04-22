@@ -1,13 +1,10 @@
-// import { ValitionBookingTravelTimeService } from "../src/services/ValitionBookingTravelTimeService";
+import { ValidationBookingTravelTimeService } from "../src/services/ValidationBookingTravelTimeService";
+
+const YEAR_FOR_TRAVEL = jest.fn();
+YEAR_FOR_TRAVEL.mockReturnValueOnce("2024").mockReturnValueOnce("2024");
 
 test('validate that selected year is in the not restrict period', () => {
-  // const valitionBookingTravelTimeService: ValitionBookingTravelTimeService = new ValitionBookingTravelTimeService();
-  // expect(valitionBookingTravelTimeService.IsValidateSelectedYear(2015)).toBe(true);
+  const valitionBookingTravelTimeService = new ValidationBookingTravelTimeService();
+  valitionBookingTravelTimeService.IsValidateSelectedYear(2015);
+  expect(valitionBookingTravelTimeService.IsValidateSelectedYear(2015)).toBe(false);
 });
-
-// test('validate that selected year is in the not restrict period', () => {
-//   // expect(IsValidateSelectedYear(2015)).toBe(true);
-//   // expect(IsValidateSelectedYear(2015)).toBe(true);
-//   // expect(IsValidateSelectedYear(2015)).toBe(true);
-//   // expect(IsValidateSelectedYear(2015)).toBe(true);
-// });
