@@ -71,13 +71,31 @@ describe("Set of tests for the validation of the period", () => {
   //     new ValidationBookingTravelTimeService();
   //   expect(valitionBookingTravelTimeService.IsValidateSelectedMonth(1000)).toThrow();
   // });
-
-  // CONTINUE HERE:
   
   // test("TEST FOR CHECKING that selected DAY IS VALID period", () => {
   //   const valitionBookingTravelTimeService =
   //     new ValidationBookingTravelTimeService();
   //     expect(() => valitionBookingTravelTimeService.IsValidateSelectedDay(-1)).toThrow();
   // });
+
+  // test("TEST FOR CHECKING that selected DAY IS VALID period", () => {
+  //   const valitionBookingTravelTimeService =
+  //     new ValidationBookingTravelTimeService();
+  //     expect(() => valitionBookingTravelTimeService.IsValidateSelectedDay(0)).toThrow();
+  // });
+
+  test("TEST FOR CHECKING that selected MONTH IS VALID period", () => {
+    const valitionBookingTravelTimeService = new ValidationBookingTravelTimeService();
+    expect(valitionBookingTravelTimeService.IsValidateSelectedDay(1)).toBe(
+      true
+    );
+  });
+
+  test("TEST FOR CHECKING that selected MONTH IS VALID period", () => {
+    const valitionBookingTravelTimeService = new ValidationBookingTravelTimeService();
+    expect(valitionBookingTravelTimeService.IsValidateSelectedDay(31)).toBe(
+      true
+    );
+  });
 
 });

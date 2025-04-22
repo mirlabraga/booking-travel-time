@@ -87,23 +87,32 @@ export class ValidationBookingTravelTimeService {
     );
   }
 
-  //async IsValidateSelectedDay(day: number, query: any) {
-  async IsValidateSelectedDay(day: number) {
+  IsBinaryYear() {
+    // for fevereiro
+  }
+
+  IsValidateSelectedDay(day: number) {
     const isDayOnTheMonth = day >= 1 && day <= 31;
-    // const isValidHourOnYearAndMonth =
-    //   await this.travelTimeQueryService.getValidHourOnYearAndMonth(
-    //     query.parameter.year,
-    //     query.query.parameter.day
-    //   );
-    // if (isDayOnTheMonth && isValidHourOnYearAndMonth) {
-    //   return true;
-    // }
     if (isDayOnTheMonth) {
       return true;
     }
     throw new TravelTimeServiceExpection(
       "[ERROR]: This DAY IS NOT ALLOW to travel."
     );
+    // // const isValidHourOnYearAndMonth =
+    // //   await this.travelTimeQueryService.getValidHourOnYearAndMonth(
+    // //     query.parameter.year,
+    // //     query.query.parameter.day
+    // //   );
+    // // if (isDayOnTheMonth && isValidHourOnYearAndMonth) {
+    // //   return true;
+    // // }
+    // if (isDayOnTheMonth) {
+    //   return true;
+    // }
+    // throw new TravelTimeServiceExpection(
+    //   "[ERROR]: This DAY IS NOT ALLOW to travel."
+    // );
   }
 
   IsValidateSelectedHour(hour: number, query: any) {
