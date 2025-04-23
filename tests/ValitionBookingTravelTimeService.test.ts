@@ -14,7 +14,7 @@ jest.mock("../src/services/TravelTimeQueryService", () => {
   });
 });
 
-jest.mock("../src/exception/TravelTimeServiceException", jest.fn());
+// jest.mock("../src/exception/TravelTimeServiceException", jest.fn());
 
 describe("Set of tests for the validation of the period", () => {
 

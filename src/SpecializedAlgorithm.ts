@@ -1,4 +1,4 @@
-class Utils {
+export class SpecializedAlgorithm {
 
   constructor() {}
   
@@ -33,5 +33,3 @@ class Utils {
     return false;
   }
 }
-
-export default Utils;
