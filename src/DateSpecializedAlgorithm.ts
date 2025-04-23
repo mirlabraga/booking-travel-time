@@ -1,4 +1,4 @@
-export class SpecializedAlgorithm {
+export class DateSpecializedAlgorithm {
 
   constructor() {}
   
@@ -31,5 +31,9 @@ export class SpecializedAlgorithm {
       return true;
     }
     return false;
+  }
+
+  IsBinaryYear() {
+    // for fevereiro
   }
 }

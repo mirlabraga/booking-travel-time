@@ -4,20 +4,18 @@ import TravelTimeServiceExpection from "../exception/TravelTimeServiceException"
 const YEAR_FOR_TRAVEL = process.env.START_YEAR || 2024;
 
 export class ValidationTimeTravel implements IValidade {
+
+  private date: {year: any; month: any; day: any; hour: any; time: any };
+
+  constructor(date: {year: any; month: any; day: any; hour: any; time: any }) {
+    this.date = date;
+  }
+
   valid() {
     try {
 
-      // TODO: Implement separate for the travelers, should be coverage for many possible of test
-      travelers?.forEach((traveler) => {
-        if (this.hasMentalAndOrPhysicalDisease(traveler)) {
-          throw new TravelTimeServiceExpection(
-            "[ERROR]: This TRAVELER IS NOT ALLOW to travel."
-          );
-        }
-      });
-
-      this.IsValidateSelectedYear(date.year);
-      this.IsValidateSelectedMonth(date.month);
+      this.IsValidateSelectedYear(this.date.year);
+      this.IsValidateSelectedMonth(this.date.month);
       // this.IsValidateSelectedDay(date.day, {
       //   query: {
       //     parameter: {
@@ -27,16 +25,16 @@ export class ValidationTimeTravel implements IValidade {
       //     },
       //   },
       // });
-      this.IsValidateSelectedHour(date.hour, {
+      this.IsValidateSelectedHour(this.date.hour, {
         query: {
           parameter: {
-            year: date.year,
-            day: date.day,
-            hour: date.hour,
+            year: this.date.year,
+            day: this.date.day,
+            hour: this.date.hour,
           },
         },
       });
-      this.IsValidateSelectedTime(date.time, { query: {} });
+      this.IsValidateSelectedTime(this.date.time, { query: {} });
     } catch (error) {
       if (error instanceof TravelTimeServiceExpection) {
         throw error;
@@ -62,10 +60,6 @@ export class ValidationTimeTravel implements IValidade {
     throw new TravelTimeServiceExpection(
       "[ERROR]: This MONTH IS NOT ALLOW to travel."
     );
-  }
-
-  IsBinaryYear() {
-    // for fevereiro
   }
 
   IsValidateSelectedDay(day: number) {
