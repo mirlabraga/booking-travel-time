@@ -1,8 +1,10 @@
 import BookingTravelTimeService from "./src/services/BookingTravelTimeService";
+import { TravelTimeQueryService } from "./src/services/TravelTimeQueryService";
 import ValitionBookingTravelTimeService from "./src/services/ValidationBookingTravelTimeService";
+import { ValidationTimeTravel } from "./src/services/ValidationTimeTravel";
+import { ValidationTraveler } from "./src/services/ValidationTraveler";
 
 class Main {
-
   private bookingTravelTimeService: BookingTravelTimeService | undefined;
 
   constructor(bookingTravelTimeService: BookingTravelTimeService) {
@@ -30,7 +32,10 @@ class Main {
       },
     };
 
-    const qrCode = this.bookingTravelTimeService?.getQRCode(boardingPass, travelDestination);
+    const qrCode = this.bookingTravelTimeService?.getQRCode(
+      boardingPass,
+      travelDestination
+    );
 
     const travelerJohDoe = {
       name: "John Doe",
@@ -43,10 +48,30 @@ class Main {
   }
 }
 
-const valitionBookingTravelTimeService: ValitionBookingTravelTimeService = new ValitionBookingTravelTimeService();
-const bookingTravelTimeService: BookingTravelTimeService  = new BookingTravelTimeService();
-
+const date = {
+  year: 2024,
+  month: 3,
+  day: 31,
+  hour: 23,
+  minutes: 59,
+  seconds: 59,
+  millisecond: 0.000000000000000000000000000001,
+};
+const validationTimeTravel: ValidationTimeTravel = new ValidationTimeTravel(
+  date
+);
+const validationTraveler: ValidationTraveler = new ValidationTraveler();
+const travelTimeQueryService: any = new TravelTimeQueryService();
+const valitionBookingTravelTimeService: ValitionBookingTravelTimeService =
+  new ValitionBookingTravelTimeService(
+    validationTimeTravel,
+    validationTraveler,
+    travelTimeQueryService
+  );
+const bookingTravelTimeService: BookingTravelTimeService =
+  new BookingTravelTimeService(valitionBookingTravelTimeService);
 
 const main = new Main(bookingTravelTimeService);
-console.log(main.travelInTime("21 April 2025 10:30:59 GMT", main.getTravelers()));
-
+console.log(
+  main.travelInTime("21 April 2025 10:30:59 GMT", main.getTravelers())
+);

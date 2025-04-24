@@ -5,9 +5,9 @@ const YEAR_FOR_TRAVEL = process.env.START_YEAR || 2024;
 
 export class ValidationTimeTravel implements IValidade {
 
-  private date: {year: any; month: any; day: any; hour: any; time: any };
+  private date: {year: number; month: number; day: number; hour: number; millisecond: number };
 
-  constructor(date: {year: any; month: any; day: any; hour: any; time: any }) {
+  constructor(date: {year: number; month: number; day: number; hour: number; millisecond: number }) {
     this.date = date;
   }
 
@@ -34,7 +34,7 @@ export class ValidationTimeTravel implements IValidade {
           },
         },
       });
-      this.IsValidateSelectedTime(this.date.time, { query: {} });
+      this.IsValidateSelectedTime(this.date.millisecond, { query: {} });
     } catch (error) {
       if (error instanceof TravelTimeServiceExpection) {
         throw error;

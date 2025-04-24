@@ -25,7 +25,8 @@ class Traveler {
     country: string,
     passportNumber: string,
     passportExpirationDate: Date,
-    dateOfBirth: Date
+    dateOfBirth: Date,
+    superClean: boolean
   ) {
     this.id = id;
     this.name = name;
@@ -39,6 +40,7 @@ class Traveler {
     this.passportNumber = passportNumber;
     this.passportExpirationDate = passportExpirationDate;
     this.dateOfBirth = dateOfBirth;
+    this.superClean = superClean;
   }
   getId(): string {
     return this.id;
@@ -82,7 +84,7 @@ class Traveler {
 
   isSuperClean(): boolean {
     // return checkjustice and chekthe health recentely (Mirla and Victoria)
-    return true;
+    return this.superClean;
   }
 }
 export default Traveler;

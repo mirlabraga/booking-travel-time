@@ -1,5 +1,13 @@
 export class DateSpecializedAlgorithm {
 
+  // year: 2024,
+  // month: 3,
+  // day: 31,
+  // hour: 23,
+  // minutes: 59,
+  // seconds: 59,
+  // millisecond: 0.000000000000000000000000000001,
+
   constructor() {}
   
   IsNumber(number: number) {
@@ -33,7 +41,7 @@ export class DateSpecializedAlgorithm {
     return false;
   }
 
-  IsBinaryYear() {
-    // for fevereiro
+  IsBinaryYear(year: number) {
+    return (year % 2 === 0);
   }
 }
